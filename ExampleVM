@@ -1,0 +1,55 @@
+'''
+Get user selection of item
+Get the required money for the item
+If the user didn't cancel, dispense the item
+
+While the entered coins are less than required:
+    Ask the user for a coin, or cancel
+    If it's invalid, tell the user
+    If the user has cancelled, return the coins and exit to the main loop
+    Add the coin to the total collected [1]
+    If the coins are greater than or equal to the required amount [2], exit to the main loop 
+    
+Tell the user the item is dispensed
+Record the transaction
+Reduce the stock of items by 1 [3]
+
+'''
+
+coins = [5,10,20,50,100,200]
+
+def main():
+    print("-----~~~Welcome to Refresher Vending Machine~~~-----")
+    items = {{"Coffee":300,"Tea":250 ,"Coke":320,"Juice":200}}
+    
+    while True:
+        print("Enter the number to select the drink")
+        print("1~~~Coffee - 300cents")
+        print("2~~~Tea - 250 cents")
+        print("3~~~Coke - 320 cents")
+        print("4~~~Juice - 200 cents")
+        print("5~~~CANCEL")
+        choice = input("Please select your Drink!: ")
+        
+        #check digit
+        while not choice.isdigit():
+            print("Enter digits only!")
+            choice = input("Please select your Drink!: ")
+        choice = int(choice)
+        
+        if choice == 1:
+            items = coffee_items(items)
+        if choice == 2:
+            items = tea_items(items)
+        if choice == 3:
+            items = coke_items(items)
+        if choice == 4:
+            items = juice_items(items)
+        if choice == 5:
+            print ("Goodbye! ")
+            break
+        else:
+            print("Please only select from the avalible options")
+            
+if __name__ == "__main__":
+    main()
