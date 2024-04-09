@@ -20,13 +20,6 @@ class VendingMachine:
         self.item = other.get_item()
 
         
-# NOT SURE WHAT IF WE NEED THIS ONE BELOW
-class Enter_code:
-    def __init__(self, code = "A0"):
-        self.code = code
-    
-    def get_code(self):
-        return self.code
 
 
 
