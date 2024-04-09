@@ -1,25 +1,29 @@
+'''
+Tsimtxuj Her, Drew Harinen, Andres Sanchez.
+CIS PROJEKT
+'''
 #CIS PROJECT --> Tsimtxuj Her, Drew Harinen, Andres Sanchez
 
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
 class VendingMachine:
-    def __init__(self, item_code, _item, item_amount = 10):
-        self.itemcode = item_code
-        self.item = _item
-        self.itemamount = item_amount
-    def get_code(self):
-        return self.itemcode
+	def __init__(self, item_code, _item, item_amount = 10, _currency=0):
+		self.itemcode = item_code
+		self.item = _item
+		self.itemamount = item_amount
+		self.currency=_currency
+	def get_code(self):
+		return self.itemcode
     
-    def get_item(self):
-        return self.item
+	def get_item(self):
+		return self.item
     
-    def get_amount(self):
-        return self.itemamount
+	def get_amount(self):
+		return self.itemamount
     
-    def set_item(self, other):
-        self.item = other.get_item()
-
+	def get_currency(self):
+		return self.currency
+		
+	def set_item(self, other):
+		self.item = other.get_item()
         
-
-
-
