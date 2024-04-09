@@ -37,5 +37,5 @@ def The_real_stuff():
 	
 	
 if __name__=="__main__":
-
+	The_real_stuff()
 
