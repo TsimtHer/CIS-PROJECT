@@ -11,7 +11,7 @@ class VendingMachine:
 		self.itemcode = item_code
 		self.item = _item
 		self.itemamount = item_amount
-		self.currency=_currency
+		self.sheckles=_sheckles
 	def get_code(self):
 		return self.itemcode
     
@@ -32,7 +32,7 @@ def The_real_stuff():
 	while True:	
 		print("\nPlease input A1, A2, A3, A4, A5 into the vending machine")
 		print("\nPlease input amount of sheckles")
-		code_input=input("Enter code: ")
+	code_input=input("Enter code: ")
 
 	
 	
