@@ -6,6 +6,7 @@ CIS PROJEKT
 
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
+'''
 class VendingMachine:
 	def __init__(self, item_code, _item, item_amount = 10, _sheckles=0):
 		self.itemcode = item_code
@@ -26,7 +27,38 @@ class VendingMachine:
 		
 	def set_item(self, other):
 		self.item = other.get_item()
+'''
+class VendingMachine:
+	def __init__(self, _code, _sheckles=0):
+		self.code=_code
+		self.sheckles=_sheckles
 	
+	def get_code(self):
+		return self.code
+	
+	def get_sheckles(self):
+		return self.sheckles
+
+	def sheckle_depletion(self, amount):
+		self.sheckles-=amount
+		return self.sheckles
+	
+	def display_sheckles(self):
+		print(f"You're balance is {self.get_sheckles()}")
+	
+	def sheckle_add(self, amount):
+		self.sheckles+=amount
+		return self.sheckles
+
+	def sheckles_zero(self):
+		if self.sheckles<=0:
+			print("You are out of sheckles, go away.")
+		else:	
+			print(f"You have {self.get_sheckles()} sheckles left. Would you like to buy more?")
+	
+	def sheckle_change(self, amount):
+		pass
+
 def The_real_stuff():
 	vending_code_input={"A1":"Swedish Fish","A2":"Cheese","A3":"Poprocks","A4":"Jerky","A5":"Doritos"}
 	while True:	
