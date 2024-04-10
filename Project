@@ -73,13 +73,7 @@ class VendingMachine:
 	def sheckle_change(self, amount):
 		pass
 
-def The_real_stuff():
-	vending_code_input={"A1":"Swedish Fish","A2":"Cheese","A3":"Poprocks","A4":"Jerky","A5":"Doritos"}
-	while True:	
-		print("\nPlease input A1, A2, A3, A4, A5 into the vending machine")
-		print("\nPlease input amount of sheckles")
-		code_input=input("Enter code: ")
-		break
+
 	
 	
 if __name__=="__main__":
