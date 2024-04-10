@@ -7,6 +7,36 @@ CIS PROJEKT
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
 '''
+print(f"Hello earthling! This what we have in our vending machine today:
+
+
+
+def vend_intro():
+# the individual dictionaries
+	products = 
+		{"A1": "Swedish Fish",
+		"A2": "Apple", 
+		"A3": "Poprocks", 
+		"A4": "Beef Jerky", 
+		"A5": "Cheetos"}
+	prices = {"A1": "2 sheckles", 
+		  "A2": "1 sheckles", 
+		  "A3": "3 sheckles", 
+		  "A4": "4 sheckles", 
+		  "A5": "10 sheckles"}
+	inventory = 
+		{"A1": 5, 
+		 "A2": 5, 
+		 "A3": 5, 
+		 "A4": 5, 
+		 "A5": 5}
+	
+	# Combine the dictionaries into one
+	combined_dict = {}
+
+for key in products:
+    combined_dict[key] = {'product': products[key], 'price': prices[key], 'inventory': inventory[key]}
+print(combined_dict) 
 class VendingMachine:
 	def __init__(self, item_code, _item, item_amount = 10, _sheckles=0):
 		self.itemcode = item_code
