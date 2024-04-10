@@ -6,7 +6,7 @@ CIS PROJEKT
 
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
-'''
+
 print(f"Hello earthling! This what we have in our vending machine today:
 
 
@@ -37,27 +37,7 @@ def vend_intro():
 for key in products:
     combined_dict[key] = {'product': products[key], 'price': prices[key], 'inventory': inventory[key]}
 print(combined_dict) 
-class VendingMachine:
-	def __init__(self, item_code, _item, item_amount = 10, _sheckles=0):
-		self.itemcode = item_code
-		self.item = _item
-		self.itemamount = item_amount
-		self.sheckles=_sheckles
-	def get_code(self):
-		return self.itemcode
-    
-	def get_item(self):
-		return self.item
-    
-	def get_amount(self):
-		return self.itemamount
-    
-	def get_currency(self):
-		return self.currency
-		
-	def set_item(self, other):
-		self.item = other.get_item()
-'''
+
 # WE USE THIS CLASS BELOW!
 class VendingMachine:
 	def __init__(self, _code, _sheckles=0):
