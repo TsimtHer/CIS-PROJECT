@@ -20,8 +20,7 @@ amount_of_scheckles=input()
 
 def vend_intro():
 # the individual dictionaries
-	products = 
-		{"A1": "Swedish Fish",
+	products = {"A1": "Swedish Fish",
 		"A2": "Apple", 
 		"A3": "Poprocks", 
 		"A4": "Beef Jerky", 
@@ -31,8 +30,7 @@ def vend_intro():
 		  "A3": "3 sheckles", 
 		  "A4": "4 sheckles", 
 		  "A5": "10 sheckles"}
-	inventory = 
-		{"A1": 5, 
+	inventory = {"A1": 5, 
 		 "A2": 5, 
 		 "A3": 5, 
 		 "A4": 5, 
