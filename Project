@@ -16,7 +16,8 @@ print("A5: Cheetos, 10 sheckles")
 
 print("Input scheckles:")
 amount_of_scheckles=input()
-
+print("Enter code:")
+user_code = input()
 
 def vend_intro():
 # the individual dictionaries
@@ -30,17 +31,13 @@ def vend_intro():
 		  "A3": "3 sheckles", 
 		  "A4": "4 sheckles", 
 		  "A5": "10 sheckles"}
-	inventory = {"A1": 5, 
-		 "A2": 5, 
-		 "A3": 5, 
-		 "A4": 5, 
-		 "A5": 5}
+
 	
 	# Combine the dictionaries into one
 	combined_dict = {}
 
 	for key in products:
-		combined_dict[key] = {'product': products[key], 'price': prices[key], 'inventory': inventory[key]}
+		combined_dict[key] = {'product': products[key], 'price': prices[key]}
 	print(combined_dict) 
 
 
