@@ -7,13 +7,12 @@ CIS PROJEKT
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
 
-print(f"Hello earthling! This what we have in our vending machine today:
-A1: Swedish Fish, 2 sheckles
-A2: Apple, 1 sheckles
-A3: Poprocks, 3 sheckles
-A4: Beef Jerky, 4 sheckles
-A5: Cheetos, 10 sheckles)
-
+print("Hello earthling! This what we have in our vending machine today:")
+print("A1: Swedish Fish, 2 sheckles")
+print("A2: Apple, 1 sheckles")
+print("A3: Poprocks, 3 sheckles")
+print("A4: Beef Jerky, 4 sheckles")
+print("A5: Cheetos, 10 sheckles")
 
 
 def vend_intro():
@@ -39,9 +38,10 @@ def vend_intro():
 	# Combine the dictionaries into one
 	combined_dict = {}
 
-for key in products:
-    combined_dict[key] = {'product': products[key], 'price': prices[key], 'inventory': inventory[key]}
-print(combined_dict) 
+	for key in products:
+		combined_dict[key] = {'product': products[key], 'price': prices[key], 'inventory': inventory[key]}
+	print(combined_dict) 
+
 
 # WE USE THIS CLASS BELOW!
 class VendingMachine:
