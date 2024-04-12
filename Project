@@ -8,6 +8,11 @@ CIS PROJEKT
 # NEED FIXING ASAP
 
 print(f"Hello earthling! This what we have in our vending machine today:
+A1: Swedish Fish, 2 sheckles
+A2: Apple, 1 sheckles
+A3: Poprocks, 3 sheckles
+A4: Beef Jerky, 4 sheckles
+A5: Cheetos, 10 sheckles)
 
 
 
