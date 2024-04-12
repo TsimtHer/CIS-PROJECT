@@ -16,8 +16,7 @@ print("A5: Cheetos, 10 sheckles")
 
 print("Input scheckles:")
 amount_of_scheckles=input()
-print("Enter code:")
-user_code = input()
+
 
 def vend_intro():
 # the individual dictionaries
@@ -79,5 +78,5 @@ class VendingMachine:
 	
 	
 if __name__=="__main__":
-	pass
+	user_sheckles=input("Enter amount of Sheckles: ")
 
