@@ -70,11 +70,12 @@ class VendingMachine:
 		else:	
 			print(f"You have {self.get_sheckles()} sheckles left. Would you like to buy more?")
 	
-	
+def main():
+	user_sheckles=int(input("Enter amount of Sheckles: "))
+	user_code=input("Enter product code: ")
 
 
 	
 	
 if __name__=="__main__":
-	user_sheckles=int(input("Enter amount of Sheckles: "))
-	user_code=input("Enter product code: ")
+	main()
