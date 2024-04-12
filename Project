@@ -14,8 +14,6 @@ print("A3: Poprocks, 3 sheckles")
 print("A4: Beef Jerky, 4 sheckles")
 print("A5: Cheetos, 10 sheckles")
 
-print("Input scheckles:")
-amount_of_scheckles=input()
 
 
 def vend_intro():
@@ -78,5 +76,5 @@ class VendingMachine:
 	
 	
 if __name__=="__main__":
-	user_sheckles=input("Enter amount of Sheckles: ")
-
+	user_sheckles=int(input("Enter amount of Sheckles: "))
+	user_code=input("Enter product code: ")
