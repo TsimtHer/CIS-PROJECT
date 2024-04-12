@@ -78,12 +78,11 @@ class VendingMachine:
 		else:	
 			print(f"You have {self.get_sheckles()} sheckles left. Would you like to buy more?")
 	
-	def sheckle_change(self, amount):
-		pass
+	
 
 
 	
 	
 if __name__=="__main__":
-	The_real_stuff()
+	pass
 
