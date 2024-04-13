@@ -7,50 +7,23 @@ CIS PROJEKT
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
 
-print("Hello earthling! This what we have in our vending machine today:")
-print("A1: Swedish Fish, 2 sheckles")
-print("A2: Apple, 1 sheckles")
-print("A3: Poprocks, 3 sheckles")
-print("A4: Beef Jerky, 4 sheckles")
-print("A5: Cheetos, 10 sheckles")
-
-
-
-def vend_intro():
-# the individual dictionaries
-	products = {"A1": "Swedish Fish",
-		"A2": "Apple", 
-		"A3": "Poprocks", 
-		"A4": "Beef Jerky", 
-		"A5": "Cheetos"}
-	prices = {"A1": 2, 
-		  "A2": 1, 
-		  "A3": 3, 
-		  "A4": 4, 
-		  "A5": 10}
-	return prices  # RETURN THE PRICES AND PRODUCT DICTIONARIES
-	return products
-	
-	# Combine the dictionaries into one
-	combined_dict = {}
-'''
-	for key in products:
-		combined_dict[key] = {'product': products[key], 'price': prices[key]}
-	print(combined_dict) '''
-
+print("Hello earthling! This what we have in our vending machine today:\n")
+print("A1: Swedish Fish, 2 sheckles\n")
+print("A2: Apple, 1 sheckles\n")
+print("A3: Poprocks, 3 sheckles\n")
+print("A4: Beef Jerky, 4 sheckles\n")
+print("A5: Cheetos, 10 sheckles\n")
 
 # WE USE THIS CLASS BELOW!
 class VendingMachine:
-	def __init__(self, _code, _sheckles=0):
+	def __init__(self, _code,_price,):
 		self.code=_code
-		self.sheckles=_sheckles
-	
+		self.price=_price
 	def get_code(self):
 		return self.code
 	
-	def get_sheckles(self):
-		return self.sheckles
-
+	def get_price(self):
+		return self.price
 	def sheckle_depletion(self, amount):
 		self.sheckles-=amount
 		return self.sheckles
@@ -71,17 +44,62 @@ class VendingMachine:
 		else:	
 			print(f"You have {self.get_sheckles()} sheckles left. Would you like to buy more?")
 	
+
+def vend_intro():
+# the individual dictionaries
+	products = {"A1": "Swedish Fish",
+		"A2": "Apple", 
+		"A3": "Poprocks", 
+		"A4": "Beef Jerky", 
+		"A5": "Cheetos"}
+	prices = {"A1": 2, 
+		  "A2": 1, 
+		  "A3": 3, 
+		  "A4": 4, 
+		  "A5": 10}
+	#return prices  # RETURN THE PRICES AND PRODUCT DICTIONARIES --> Delete "#" on both returns If you want to use the DRAFT 1
+	#return products
+	
+    #Combined list to append into VendingMachine class so we can use class
+	combined_list = []
+	for code, product in products.items():
+		combined_list.append(VendingMachine(code,prices[code]))
+	return combined_list
+'''	# Combine the dictionaries into one
+	for key in products:
+		combined_dict[key] = {'product': products[key], 'price': prices[key]}
+	print(combined_dict) '''
+
+
+
 def main():
-	prices=vend_intro()
+	#prices=vend_intro()
 	user_sheckles=int(input("Enter amount of Sheckles: "))
-	user_code=input("Enter product code: ")
+	user_code=input("Enter product code: ").upper()
 	# THE COMMENTED OUT CODE BELOW WAS A TEST CODE
 	'''user_code=="A1":
 		change=user_sheckles - prices.get("A1")
 		print(change)'''
-        
-#rough draft
 
+    
+    
+    #ROUGH DRAFT 2 --> Uses parts of the VendingMachine Class
+	combined_list = vend_intro()
+	for machine in combined_list:
+		if user_code == machine.get_code():
+			if user_sheckles >= machine.get_price():
+				change = user_sheckles-machine.get_price()
+				print(f"Your change is {change}. Enjoy the snack Human.")
+			elif user_sheckles < machine.get_price():
+				print("Insufficient Funds.")
+			elif user_sheckles < 0:
+				print("You are out of sheckles, go away.")
+			break
+	else:
+		print("Invalid Product Code.")
+                
+     #rough draft 1 --> Doesn't use VendingMachine class but still works, just remove "#" on return prices and products in vend_intro()
+"""
 	if user_code == "A1" or user_code=="a1":
 		change = user_sheckles - prices.get("A1")
 		print(f"Your change is {change} scheckles, have a nice day!")
@@ -98,7 +116,7 @@ def main():
 		change = user_sheckles - prices.get("A5")
 		print(f"Your change is {change} scheckles, have a nice day!")
 	else:
-		print("Please input valid code")
+		print("Please input valid code")"""
 
 
 
