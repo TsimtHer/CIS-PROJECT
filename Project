@@ -57,21 +57,46 @@ def vend_intro():
 		  "A3": 3, 
 		  "A4": 4, 
 		  "A5": 10}
-	#return prices  # RETURN THE PRICES AND PRODUCT DICTIONARIES --> Delete "#" on both returns If you want to use the DRAFT 1
-	#return products
 	
-    #Combined list to append into VendingMachine class so we can use class
+	
+	#return prices  # RETURN THE PRICES AND PRODUCT DICTIONARIES --> Delete "#" on both returns If you want to use the DRAFT 1
+	#return products    
+    
 	combined_list = []
 	for code, product in products.items():
 		combined_list.append(VendingMachine(code,prices[code]))
-	return combined_list
+	return combined_list    
+    
+
+	
+    #Combined list to append into VendingMachine class so we can use class
+
 '''	# Combine the dictionaries into one
 	for key in products:
 		combined_dict[key] = {'product': products[key], 'price': prices[key]}
 	print(combined_dict) '''
 
+def product_list():
+# the individual dictionaries
+	products = {"A1": "Swedish Fish",
+		"A2": "Apple", 
+		"A3": "Poprocks", 
+		"A4": "Beef Jerky", 
+		"A5": "Cheetos"}
+	return products
+    
+    
+def save_to_txt(product_name, change):
+	print("Would you like to save this?\n")
+	yes_no = input("Y/N: ").upper()
+	if yes_no == "Y":
+		with open('savefile.txt', 'w') as save_file:
+			save_file.write(f"You bought {product_name}, {change} sheckles left")
+		print("SAVED!")
+	else:
+		pass
 
-
+    
 def main():
 	#prices=vend_intro()
 	user_sheckles=int(input("Enter amount of Sheckles: "))
@@ -85,11 +110,14 @@ def main():
     
     #ROUGH DRAFT 2 --> Uses parts of the VendingMachine Class
 	combined_list = vend_intro()
+	products=product_list()
 	for machine in combined_list:
 		if user_code == machine.get_code():
 			if user_sheckles >= machine.get_price():
 				change = user_sheckles-machine.get_price()
+				product_name = products[user_code]
 				print(f"Your change is {change}. Enjoy the snack Human.")
+				save_to_txt(product_name, change)
 			elif user_sheckles < machine.get_price():
 				print("Insufficient Funds.")
 			elif user_sheckles < 0:
@@ -100,18 +128,7 @@ def main():
 
         
         
-	def save_to_txt():
-		combined_list = vend_intro()
-		print("Would you like to save this?\n")
-		yes_no=input("Y/N: ").upper()
-		if yes_no=="Y":
-			save_file=open('savefile.txt','w')
-			save_file.write(f"You bought {product[user_code]}, {change} sheckles left")
-			print("SAVED!")
-		else:
-			pass
-	
-    
+
      #rough draft 1 --> Doesn't use VendingMachine class but still works, just remove "#" on return prices and products in vend_intro()
 """
 	if user_code == "A1" or user_code=="a1":
@@ -135,4 +152,3 @@ def main():
 
 if __name__=="__main__":
 	main()
-	save_to_txt()
