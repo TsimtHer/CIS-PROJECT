@@ -2,7 +2,7 @@
 Tsimtxuj Her, Drew Harinen, Andres Sanchez.
 CIS PROJEKT
 '''
-#CIS PROJECT --> Tsimtxuj Her, Drew Harinen, Andres Sanchez
+#CIS PROJEKT --> Tsimtxuj Her, Drew Harinen, Andres Sanchez
 
 # What's the actual thing this vending machine needs to do?
 # NEED FIXING ASAP
@@ -23,19 +23,20 @@ def vend_intro():
 		"A3": "Poprocks", 
 		"A4": "Beef Jerky", 
 		"A5": "Cheetos"}
-	prices = {"A1": "2 sheckles", 
-		  "A2": "1 sheckles", 
-		  "A3": "3 sheckles", 
-		  "A4": "4 sheckles", 
-		  "A5": "10 sheckles"}
-
+	prices = {"A1": 2, 
+		  "A2": 1, 
+		  "A3": 3, 
+		  "A4": 4, 
+		  "A5": 10}
+	return prices  # RETURN THE PRICES AND PRODUCT DICTIONARIES
+	return products
 	
 	# Combine the dictionaries into one
 	combined_dict = {}
-
+'''
 	for key in products:
 		combined_dict[key] = {'product': products[key], 'price': prices[key]}
-	print(combined_dict) 
+	print(combined_dict) '''
 
 
 # WE USE THIS CLASS BELOW!
@@ -71,29 +72,34 @@ class VendingMachine:
 			print(f"You have {self.get_sheckles()} sheckles left. Would you like to buy more?")
 	
 def main():
+	prices=vend_intro()
 	user_sheckles=int(input("Enter amount of Sheckles: "))
 	user_code=input("Enter product code: ")
-
+	# THE COMMENTED OUT CODE BELOW WAS A TEST CODE
+	'''user_code=="A1":
+		change=user_sheckles - prices.get("A1")
+		print(change)'''
+        
 #rough draft
-'''
-if user_code == A1:
-	change = user_scheckles - 2
-	print(f"Your change is {change} scheckles, have a nice day!")
-elif user_code == A2:
-	change = user_scheckles - 1
-	print(f"Your change is {change} scheckles, have a nice day!")
-elif user_code == A3:
-	change = user_scheckles - 3
-	print(f"Your change is {change} scheckles, have a nice day!")
-elif user_code == A4:
-	change = user_scheckles - 4
-	print(f"Your change is {change} scheckles, have a nice day!")
-elif user_code == A5:
-	change = user_scheckles - 10
-	print(f"Your change is {change} scheckles, have a nice day!")
-else:
-	print("Please input valid code")
-'''
+
+	if user_code == "A1" or user_code=="a1":
+		change = user_sheckles - prices.get("A1")
+		print(f"Your change is {change} scheckles, have a nice day!")
+	elif user_code == "A2" or user_code=="a2":
+		change = user_sheckles - prices.get("A2")
+		print(f"Your change is {change} scheckles, have a nice day!")
+	elif user_code == "A3" or user_code=="a3":
+		change = user_sheckles - prices.get("A3")
+		print(f"Your change is {change} scheckles, have a nice day!")
+	elif user_code == "A4" or user_code=="a4":
+		change = user_sheckles - prices.get("A4")
+		print(f"Your change is {change} scheckles, have a nice day!")
+	elif user_code == "A5" or user_code=="a5":
+		change = user_sheckles - prices.get("A5")
+		print(f"Your change is {change} scheckles, have a nice day!")
+	else:
+		print("Please input valid code")
+
 
 
 	
