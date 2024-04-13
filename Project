@@ -97,7 +97,21 @@ def main():
 			break
 	else:
 		print("Invalid Product Code.")
-                
+
+        
+        
+	def save_to_txt():
+		combined_list = vend_intro()
+		print("Would you like to save this?\n")
+		yes_no=input("Y/N: ").upper()
+		if yes_no=="Y":
+			save_file=open('savefile.txt','w')
+			save_file.write(f"You bought {product[user_code]}, {change} sheckles left")
+			print("SAVED!")
+		else:
+			pass
+	
+    
      #rough draft 1 --> Doesn't use VendingMachine class but still works, just remove "#" on return prices and products in vend_intro()
 """
 	if user_code == "A1" or user_code=="a1":
@@ -119,8 +133,6 @@ def main():
 		print("Please input valid code")"""
 
 
-
-	
-	
 if __name__=="__main__":
 	main()
+	save_to_txt()
