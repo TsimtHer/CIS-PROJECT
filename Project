@@ -99,7 +99,7 @@ def save_to_txt(product_name, change):
     
 def main():
 	#prices=vend_intro()
-	user_sheckles=int(input("Enter amount of Sheckles: "))
+	user_sheckles=int(input("Enter amount of Sheckles (MUST BE WHOLE NUMBER): "))
 	user_code=input("Enter product code: ").upper()
 	# THE COMMENTED OUT CODE BELOW WAS A TEST CODE
 	'''user_code=="A1":
@@ -116,7 +116,7 @@ def main():
 			if user_sheckles >= machine.get_price():
 				change = user_sheckles-machine.get_price()
 				product_name = products[user_code]
-				print(f"Your change is {change}. Enjoy the snack Human.")
+				print(f"Your change is {change} sheckles. Enjoy the snack Human.")
 				save_to_txt(product_name, change)
 			elif user_sheckles < machine.get_price():
 				print("Insufficient Funds.")
