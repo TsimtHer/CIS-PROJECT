@@ -87,17 +87,19 @@ def product_list():
     
     
 def save_to_txt(product_name, change):
+# this function saves your vended item to a file
 	print("Would you like to save this?\n")
 	yes_no = input("Y/N: ").upper()
 	if yes_no == "Y":
-		with open('savefile.txt', 'w') as save_file:
-			save_file.write(f"You bought {product_name}, {change} sheckles left")
+		with open('vendeditem.txt', 'w') as vended_item:
+			vended_item.write(f"You bought {product_name}, {change} sheckles left")
 		print("SAVED!")
 	else:
 		pass
 
     
 def main():
+# just our main function
 	#prices=vend_intro()
 	user_sheckles=int(input("Enter amount of Sheckles (MUST BE WHOLE NUMBER): "))
 	user_code=input("Enter product code: ").upper()
