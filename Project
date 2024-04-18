@@ -4,8 +4,7 @@ CIS PROJEKT
 '''
 #CIS PROJEKT --> Tsimtxuj Her, Drew Harinen, Andres Sanchez
 
-# What's the actual thing this vending machine needs to do?
-# NEED FIXING ASAP
+
 
 print("Hello earthling! This what we have in our vending machine today:\n")
 print("A1: Swedish Fish, 2 sheckles\n")
@@ -33,7 +32,6 @@ class VendingMachine:
 		print(f"You're balance is {self.get_sheckles()}")
 	
 	def sheckle_add(self, amount):
-		# don't worry bout this one... maybe
 		self.sheckles+=amount
 		return self.sheckles
 
