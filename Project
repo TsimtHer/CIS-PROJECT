@@ -57,8 +57,7 @@ def vend_intro():
 		  "A5": 10}
 	
 	
-	#return prices  # RETURN THE PRICES AND PRODUCT DICTIONARIES --> Delete "#" on both returns If you want to use the DRAFT 1
-	#return products    
+   
     
 	combined_list = []
 	for code, product in products.items():
@@ -67,12 +66,7 @@ def vend_intro():
     
 
 	
-    #Combined list to append into VendingMachine class so we can use class
 
-'''	# Combine the dictionaries into one
-	for key in products:
-		combined_dict[key] = {'product': products[key], 'price': prices[key]}
-	print(combined_dict) '''
 
 def product_list():
 # the individual dictionaries
@@ -105,8 +99,6 @@ def main():
 	'''user_code=="A1":
 		change=user_sheckles - prices.get("A1")
 		print(change)'''
-
-    
     
     #ROUGH DRAFT 2 --> Uses parts of the VendingMachine Class
 	combined_list = vend_intro()
